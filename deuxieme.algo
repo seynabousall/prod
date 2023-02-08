@@ -1,15 +1,26 @@
-FUNCTION tri_par_selection(arr:ARRAY_OF INTEGER) : 
+PROCEDURE tri(VAR x, VAR y : INTEGER)
 VAR
-    n,i,j:INTEGER
+    b : INTEGER;
 BEGIN
+    b := x;
+    x := y;
+    y := b;
+END
+
+PROCEDURE selection_sort(VAR arr : ARRAY_OF INTEGER)
+VAR
+    i,j,min_index,n : INTEGER;
+BEGIN
+    n := arr.length;
+
     FOR i FROM 0 TO n-1 STEP 1  DO
-    v=arr[i]
-    j=i-1
-    WHILE (j>=0)and (arr[j]>v)DO
-        arr[j+1]=arr[j]
-        j=j-1
-        arr[j+1]=v
-    END_WHILE
+    min_index := i;
+    FOR j  FROM i  TO n-i-1 STEP 1  DO
+        IF (arr[j]<arr[min_index]) THEN
+    min_index := j;
+        END_IF
     END_FOR
-    RETURN v ;
+
+    tri(arr[min_index],arr[i])
+    END_FOR
 END
