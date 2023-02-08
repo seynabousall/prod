@@ -1,6 +1,7 @@
 FUNCTION dot_product(v1,v2) : FLOAT
-
+VAR
     ps=FLOAT
+BEGIN
     ps=v1*v2
     END
     ALGORITHM paire_vect
