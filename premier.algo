@@ -1,19 +1,19 @@
-FUNCTION dot_product(v1,v2,ps) : FLOAT
-VAR
-    i:INTEGER
-BEGIN
-        ps=v1*v2
-    END_FOR
-    RETURN ps ;
-END
+FUNCTION dot_product(v1,v2) : FLOAT
+
+    ps=FLOAT
+    ps=v1*v2
+    
+    ALGORITHM paire_vect
     VAR
-        u:tab[n]:FLOAT
-        v:tab[n]:FLOAT
-        n:INTEGER
-        ps=0
+    
+    u:tab[]:FLOAT
+    v:tab[]:FLOAT
+        n,i:INTEGER
+    BEGIN
+    ps=0
 FOR i FROM 0 TO n STEP 1  DO
     IF (u=0 ou v=0) THEN
         ps=ps+u[i]*v[i]
     END_IF
-    return ps
-END_FOR
+    END_FOR
+END
