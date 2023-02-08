@@ -1,0 +1,15 @@
+FUNCTION tri_par_selection(arr:ARRAY_OF INTEGER) : 
+VAR
+    n,i,j:INTEGER
+BEGIN
+    FOR i FROM 0 TO n-1 STEP 1  DO
+    v=arr[i]
+    j=i-1
+    WHILE (j>=0)and (arr[j]>v)DO
+        arr[j+1]=arr[j]
+        j=j-1
+        arr[j+1]=v
+    END_WHILE
+    END_FOR
+    RETURN v ;
+END
